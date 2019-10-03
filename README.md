@@ -1,0 +1,2 @@
+# Account-Setup---Demo
+This is a web form that could be used as an account setup page. It is responsive for mobile viewing and includes validation for each field to ensure that the user not only fills out every field but also in the correct format. If the conditions aren't met the user's information is blocked from submission. Validation is done using javascript and, for some fields, regular expressions. This page is only a demonstration.
