@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Account Setup Page</title>
+    	<meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=yes">
+	    <meta charset="utf-8">
+    	  <style>
+	    @media(min-width: 768px) {
+		  .container-1, .container-2, .container-3, .container-4 {
+	        display: flex;
+			flex-direction: column;
+		    } 
+			.first_last {
+			  display: flex;
+			  flex-direction: row;
+			  margin-right: 50px;
+		    }  
+		  }
+		  h1, h3 {
+			  margin-left: 40px;
+		  }
+		  .gender {
+		    display: flex;
+			flex-direction: row;
+			margin-right: 50px;
+		  }
+		  fieldset {
+		    max-width: 775px;
+			margin-bottom: 40px;
+			margin-left: 0;
+			padding: 30px;
+			border: 2px solid darkblue;
+			background-color: lightgray;
+		  }
+		  legend {
+		    font-size: 1.5em;
+			font-weight: 900;
+			background-color: lightgray;
+			border: 2px solid blue;
+			padding: .2em;
+          }
+		  #warning {
+		    color: red;
+			margin-top: -10px;
+			background: lightgray;
+			font-size: 18px;
+          }
+		  select {
+		    background: white;
+			font-size: 18px;
+		  }
+		  label {
+		    font-weight: 700;
+			font-size: 1.2em;
+			background-color: lightgray;
+		  }
+		  label, input {
+		    display: block;
+			margin: 10px 15px 10px 0;
+		  }
+		  #malelbl, #femalelbl {
+		    margin-top: 0;
+		  }
+		  input#male, input#female {
+			margin: 5px 30px 20px -5px;
+		  }
+		  input {
+			font-size: 18px;
+		  }
+		  input[type="submit"] {
+			font-weight: 400;
+		  }
+		  input:hover, select:hover, textarea:hover {
+			border: 2px solid red;
+		  }
+		  span.required {
+			color: red;
+			background-color: lightgray;
+		  }
+	   </style>
+	  <script type="text/javascript" src="webForm.js"></script>
+  </head>
+  <body>
+    <div class="container-1">
+	  <div class="box-1">
+        <h1>Account Setup</h1>
+        <h3>Please fill out the fields below to create an account.</h3>
+      </div>
+	</div>
+    <form id="account-setup" onsubmit="return false">
+    <div class="container-2">
+      <div class="box-2">
+        <fieldset>
+          <legend>Basic Identification</legend>
+          <h4 id="warning">* - Denotes a required field</h4>
+          <label for="surname">Surname:</label>
+          <select id="surname" name="surname">
+            <option value="mr">Mr.</option>
+	        <option value="mrs">Mrs.</option>
+	        <option value="ms">Ms.</option>
+	      </select>
+		  <div class="first_last">
+            <label for="first">First Name:<span class="required">*</span></label>
+		    <input type="text" id="first" placeholder="John">
+		    <label for="last">Last Name:<span class="required">*</span></label>
+	        <input id="last" type="text" placeholder="Doe">
+		  </div>
+          <label id="gender">Gender:<span class="required">*</span></label>
+          <div class="gender">
+		    <label id="malelbl" for="male">Male</label>
+	        <input id="male" type="radio" name="gender-radio" value="male">
+            <label id="femalelbl" for="female">Female</label>
+            <input id="female" type="radio" name="gender-radio" value="female">
+		  </div>
+        <label for="birthdate">D.O.B:<span class="required">*</span></label> 
+        <input id="birthdate" type="date">
+      </fieldset>
+    </div>
+  </div>
+<div class="container-3">  
+  <div class="box-3">
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="phone">Phone#:<span class="required">*</span></label> 
+      <input id="phone" type="tel" placeholder="(123) 456-7890">
+      <label for="email">Email:<span class="required">*</span></label> 
+      <input id="email" type="text" placeholder="john.doe@email.com">
+    </fieldset>
+  </div>
+</div>
+<div class="container-4">
+  <div class="box-4">
+    <fieldset>
+      <legend>Account Credentials</legend>
+      <label for="username">Username:<span class="required">*</span></label>
+      <input id="username" type="text">
+      <label for="password">Password:<span class="required">*</span></label>
+      <input id="password" type="password">
+      <label id="comment_label" for="comments">Comments:</label>
+      <textarea id="comments" name="comments" rows="10" cols="30" ></textarea>
+      <input type="submit" id="click_to_submit" value="Submit Form" onclick="formValidation();">
+    </fieldset>
+  </div>
+</div>
+</form>
+</body>
+</html>
